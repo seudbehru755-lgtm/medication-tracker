@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>Medication History</h2>
+
+<ul class="list-group">
+
+{% for item in history %}
+
+<li class="list-group-item">
+    {{ item.name }} taken at {{ item.taken_at }}
+</li>
+
+{% endfor %}
+
+</ul>
+
+{% endblock %}

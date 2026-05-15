@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>Add Medication</h2>
+
+<form method="POST">
+
+    <input type="text"
+           name="name"
+           placeholder="Medication Name"
+           class="form-control mb-3"
+           required>
+
+    <input type="text"
+           name="dosage"
+           placeholder="Dosage"
+           class="form-control mb-3"
+           required>
+
+    <input type="time"
+           name="time"
+           class="form-control mb-3"
+           required>
+
+    <button class="btn btn-primary">
+        Save
+    </button>
+
+</form>
+
+{% endblock %}

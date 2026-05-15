@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <div class="container">
+
+        <h2 class="mb-4">Edit Medication</h2>
+
+        <form action="/edit/{{ medication.id }}" method="POST">
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Medication Name
+                </label>
+
+                <input autocomplete="off" autofocus class="form-control" name="name" type="text" value="{{ medication.name }}" required >
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label class="form-label"> Dosage </label>
+
+                <input  class="form-control" name="dosage" type="text" value="{{ medication.dosage }}" required >
+
+            </div>
+
+            <div class="mb-3">
+
+                <label class="form-label"> Time </label>
+
+                <input class="form-control" name="time" type="time" value="{{ medication.time }}" required >
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label class="form-label"> Status </label>
+
+                <select class="form-select" name="status" >
+
+                    <option value="Pending"
+                            {% if medication.status == "Pending" %}
+                                selected
+                            {% endif %}
+                    >
+                        Pending
+                    </option>
+
+                    <option value="Taken"
+                            {% if medication.status == "Taken" %}
+                                selected
+                            {% endif %}
+                            > Taken </option>
+
+                </select>
+
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+                Save Changes
+            </button>
+
+            <a href="/" class="btn btn-secondary">
+                Cancel
+            </a>
+
+        </form>
+
+    </div>
+
+{% endblock %}
